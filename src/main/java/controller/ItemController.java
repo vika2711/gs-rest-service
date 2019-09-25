@@ -36,7 +36,7 @@ public class ItemController {
         return new ResponseEntity<List<Item>>(list, HttpStatus.OK);
     }
 
-    @PostMapping("article")
+    @PostMapping("item")
     public ResponseEntity<Void> addItem(@RequestBody Item item, UriComponentsBuilder builder) {
         boolean flag = itemService.addItem(item);
         if (flag == false) {
@@ -47,7 +47,7 @@ public class ItemController {
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("article/{id}")
+    @DeleteMapping("item/{no}")
     public ResponseEntity<Void> deleteItem(@PathVariable("no") Integer no) {
         itemService.deleteItem(no);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
