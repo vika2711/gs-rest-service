@@ -15,7 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 @Controller
-@RequestMapping("user")
+@RequestMapping("/api")
 public class ItemController {
     @Autowired
     private IItemService itemService;
