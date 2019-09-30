@@ -26,7 +26,7 @@ public class SwaggerConfig {
         this.swaggerConfig = swaggerConfig;
     }
     @Bean
-    public Docket productApi() {
+    public Docket itemApi() {
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()

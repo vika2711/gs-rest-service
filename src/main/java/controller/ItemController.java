@@ -25,8 +25,8 @@ public class ItemController {
             @ApiParam(value = "${ItemController.getItemNo.no}", required = true)
             @PathVariable("no") Integer no) {
 
-        Item article = itemService.getItemNo(no);
-        return new ResponseEntity<Item>(article, HttpStatus.OK);
+        Item item = itemService.getItemNo(no);
+        return new ResponseEntity<Item>(item, HttpStatus.OK);
     }
 
     @GetMapping("items")

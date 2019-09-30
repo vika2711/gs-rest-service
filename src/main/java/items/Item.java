@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 public class Item {
     private String name;
+    private int quantity;
 
     private Value amount;
     private int itemNo;
