@@ -15,6 +15,7 @@
  */
 package items;
 
+import application.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,22 +30,24 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
-public class GreetingControllerTests {
+
+
+public class ItemControllerTests {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
+    public void noParamItemShouldReturnDefaultMessage() throws Exception {
 
         this.mockMvc.perform(get("/items")).andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("$.content").value("Hello, World!"));
     }
 
     @Test
-    public void paramGreetingShouldReturnTailoredMessage() throws Exception {
+    public void paramItemShouldReturnTailoredMessage() throws Exception {
 
         this.mockMvc.perform(get("/items").param("name", "Spring Community"))
                 .andDo(print()).andExpect(status().isOk())
