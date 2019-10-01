@@ -10,10 +10,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication(scanBasePackages = "gs-rets-service")
 @EnableConfigurationProperties({AppConfig.class})
 public class Application extends SpringBootServletInitializer {
-   // private static final Logger log = LoggerFactory.getLogger(Application.class);
+    //private static final Logger log = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
 }
